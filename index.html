@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TaskFlow | Project Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <span class="logo-icon">✓</span>
+                <span>TaskFlow</span>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active">
+                    <span>▦</span>
+                    Overview
+                </button>
+
+                <button class="nav-item">
+                    <span>✓</span>
+                    My Tasks
+                </button>
+
+                <button class="nav-item">
+                    <span>★</span>
+                    Completed
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Project Dashboard</p>
+                <small>Built by Cintia Leyva</small>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <p class="eyebrow">MY WORKSPACE</p>
+                    <h1>Good morning, Cintia 👋</h1>
+                    <p class="subtitle">
+                        Here's what's happening with your projects today.
+                    </p>
+                </div>
+
+                <button class="primary-button" id="open-task-form">
+                    + Add Task
+                </button>
+
+            </header>
+
+
+            <!-- Dashboard Stats -->
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon">▦</div>
+
+                    <div>
+                        <p>Total Tasks</p>
+                        <h2 id="total-count">3</h2>
+                    </div>
+                </article>
+
+
+                <article class="stat-card">
+                    <div class="stat-icon">◷</div>
+
+                    <div>
+                        <p>In Progress</p>
+                        <h2 id="active-count">2</h2>
+                    </div>
+                </article>
+
+
+                <article class="stat-card">
+                    <div class="stat-icon">✓</div>
+
+                    <div>
+                        <p>Completed</p>
+                        <h2 id="completed-count">1</h2>
+                    </div>
+                </article>
+
+            </section>
+
+
+            <!-- Tasks -->
+            <section class="task-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>My Tasks</h2>
+                        <p>Manage and track your current work.</p>
+                    </div>
+
+                    <div class="filters">
+                        <button class="filter active" data-filter="all">
+                            All
+                        </button>
+
+                        <button class="filter" data-filter="active">
+                            Active
+                        </button>
+
+                        <button class="filter" data-filter="completed">
+                            Completed
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div id="task-list" class="task-list">
+
+                    <!-- JavaScript will eventually generate these -->
+
+                    <article class="task-card">
+
+                        <button class="task-check" aria-label="Mark task complete">
+                        </button>
+
+                        <div class="task-info">
+                            <h3>Finish portfolio homepage</h3>
+                            <p>Portfolio</p>
+                        </div>
+
+                        <span class="priority high">
+                            High
+                        </span>
+
+                    </article>
+
+
+                    <article class="task-card">
+
+                        <button class="task-check" aria-label="Mark task complete">
+                        </button>
+
+                        <div class="task-info">
+                            <h3>Test responsive mobile layout</h3>
+                            <p>Development</p>
+                        </div>
+
+                        <span class="priority medium">
+                            Medium
+                        </span>
+
+                    </article>
+
+
+                    <article class="task-card completed">
+
+                        <button
+                            class="task-check checked"
+                            aria-label="Mark task active">
+                            ✓
+                        </button>
+
+                        <div class="task-info">
+                            <h3>Update GitHub profile</h3>
+                            <p>Portfolio</p>
+                        </div>
+
+                        <span class="priority low">
+                            Low
+                        </span>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Add Task Form -->
+            <section class="task-form-panel" id="task-form-panel">
+
+                <div class="form-header">
+                    <div>
+                        <h2>Add a New Task</h2>
+                        <p>Create a task for your project dashboard.</p>
+                    </div>
+                </div>
+
+                <form id="task-form">
+
+                    <div class="form-group">
+                        <label for="task-name">Task Name</label>
+
+                        <input
+                            type="text"
+                            id="task-name"
+                            placeholder="What needs to be done?"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="task-category">
+                                Category
+                            </label>
+
+                            <select id="task-category">
+                                <option>Development</option>
+                                <option>Design</option>
+                                <option>Portfolio</option>
+                                <option>Business</option>
+                                <option>Personal</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="task-priority">
+                                Priority
+                            </label>
+
+                            <select id="task-priority">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>
+                                    Medium
+                                </option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <button type="submit" class="primary-button">
+                        Add Task
+                    </button>
+
+                </form>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
