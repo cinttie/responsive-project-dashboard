@@ -5,13 +5,12 @@ const taskPriority = document.querySelector("#task-priority");
 const openTaskFormButton = document.querySelector("#open-task-form");
 const taskFormPanel = document.querySelector("#task-form-panel");
 openTaskFormButton.addEventListener("click", function () {
+    console.log("Add Task button clicked");
+
     taskFormPanel.scrollIntoView({
         behavior: "smooth"
     });
-
-    taskName.focus();
 });
-
 taskForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
