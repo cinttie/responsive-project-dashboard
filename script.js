@@ -2,6 +2,15 @@ const taskForm = document.querySelector("#task-form");
 const taskName = document.querySelector("#task-name");
 const taskCategory = document.querySelector("#task-category");
 const taskPriority = document.querySelector("#task-priority");
+const openTaskFormButton = document.querySelector("#open-task-form");
+const taskFormPanel = document.querySelector("#task-form-panel");
+openTaskFormButton.addEventListener("click", function () {
+    taskFormPanel.scrollIntoView({
+        behavior: "smooth"
+    });
+
+    taskName.focus();
+});
 
 taskForm.addEventListener("submit", function (event) {
     event.preventDefault();
