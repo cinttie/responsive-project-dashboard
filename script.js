@@ -42,6 +42,7 @@ taskCard.classList.add("task-card");
 
 taskList.append(taskCard);
     updateStats();
+    saveTasks();
 
 
   console.log(name, category, priority);
@@ -52,6 +53,7 @@ taskList.addEventListener("click", function (event) {
 
     taskCard.remove();
     updateStats();
+saveTasks();
 
     return;
     }
@@ -68,9 +70,14 @@ event.target.classList.toggle("checked");
     event.target.textContent = "";
 }
     updateStats();
+    saveTasks();
+
 
 });
 
+function saveTasks() {
+    localStorage.setItem("tasks", taskList.innerHTML);
+}
 function updateStats() {
     const allTasks = taskList.querySelectorAll(".task-card");
     const completedTasks = taskList.querySelectorAll(".task-card.completed");
