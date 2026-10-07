@@ -83,6 +83,13 @@ function updateStats() {
     activeCount.textContent = active;
     completedCount.textContent = completed;
 }
+
+const savedTasks = localStorage.getItem("tasks");
+
+if (savedTasks) {
+    taskList.innerHTML = savedTasks;
+}
+
 updateStats();
 filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
