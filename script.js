@@ -38,3 +38,18 @@ taskList.append(taskCard);
 
   console.log(name, category, priority);
 });
+taskList.addEventListener("click", function (event) {
+if (!event.target.classList.contains("task-check")) {
+    return;
+}
+const taskCard = event.target.closest(".task-card");
+
+taskCard.classList.toggle("completed");
+event.target.classList.toggle("checked");
+    if (taskCard.classList.contains("completed")) {
+    event.target.textContent = "✓";
+} else {
+    event.target.textContent = "";
+}
+
+});
