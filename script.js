@@ -8,7 +8,7 @@ const taskList = document.querySelector("#task-list");
 const totalCount = document.querySelector("#total-count");
 const activeCount = document.querySelector("#active-count");
 const completedCount = document.querySelector("#completed-count");
-const filterButtons = document.querySelectorAll(".filter-button");
+const filterButtons = document.querySelectorAll(".filter");
 openTaskFormButton.addEventListener("click", function () {
     console.log("Add Task button clicked");
 
