@@ -8,6 +8,7 @@ const taskList = document.querySelector("#task-list");
 const totalCount = document.querySelector("#total-count");
 const activeCount = document.querySelector("#active-count");
 const completedCount = document.querySelector("#completed-count");
+const filterButtons = document.querySelectorAll(".filter-button");
 openTaskFormButton.addEventListener("click", function () {
     console.log("Add Task button clicked");
 
@@ -72,3 +73,20 @@ function updateStats() {
     completedCount.textContent = completed;
 }
 updateStats();
+filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+const filter = button.textContent.trim().toLowerCase();
+const tasks = taskList.querySelectorAll(".task-card");
+
+tasks.forEach(function (task) {
+const isCompleted = task.classList.contains("completed");
+if (filter === "all") {
+    task.style.display = "flex";
+}else if (filter === "active") {
+    task.style.display = isCompleted ? "none" : "flex";
+}else if (filter === "completed") {
+    task.style.display = isCompleted ? "flex" : "none";
+}
+});
+    });
+});
