@@ -5,6 +5,9 @@ const taskPriority = document.querySelector("#task-priority");
 const openTaskFormButton = document.querySelector("#open-task-form");
 const taskFormPanel = document.querySelector("#task-form-panel");
 const taskList = document.querySelector("#task-list");
+const totalCount = document.querySelector("#total-count");
+const activeCount = document.querySelector("#active-count");
+const completedCount = document.querySelector("#completed-count");
 openTaskFormButton.addEventListener("click", function () {
     console.log("Add Task button clicked");
 
@@ -34,6 +37,7 @@ taskCard.classList.add("task-card");
 `;
 
 taskList.append(taskCard);
+    updateStats();
 
 
   console.log(name, category, priority);
@@ -51,5 +55,20 @@ event.target.classList.toggle("checked");
 } else {
     event.target.textContent = "";
 }
+    updateStats();
 
 });
+
+function updateStats() {
+    const allTasks = taskList.querySelectorAll(".task-card");
+    const completedTasks = taskList.querySelectorAll(".task-card.completed");
+
+    const total = allTasks.length;
+    const completed = completedTasks.length;
+    const active = total - completed;
+
+    totalCount.textContent = total;
+    activeCount.textContent = active;
+    completedCount.textContent = completed;
+}
+updateStats();
