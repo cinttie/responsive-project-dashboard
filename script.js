@@ -35,6 +35,9 @@ taskCard.classList.add("task-card");
         <span class="priority ${priority}">
         ${priority}
     </span>
+    <button class="delete-task" aria-label="Delete task">
+    ×
+</button>
 `;
 
 taskList.append(taskCard);
@@ -44,6 +47,14 @@ taskList.append(taskCard);
   console.log(name, category, priority);
 });
 taskList.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete-task")) {
+    const taskCard = event.target.closest(".task-card");
+
+    taskCard.remove();
+    updateStats();
+
+    return;
+    }
 if (!event.target.classList.contains("task-check")) {
     return;
 }
